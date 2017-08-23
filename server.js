@@ -1,9 +1,12 @@
 var express = require('express');
+var cors = require('cors')
 var mongoose = require('mongoose');
 const AutoIncrement = require('mongoose-sequence')(mongoose);
 var bodyParser = require('body-parser')
 
 var app = express();
+app.use(cors())
+
 mongoose.connect('mongodb://charles:controleacesso@ds062448.mlab.com:62448/controle_acesso');
 
 var port = process.env.PORT || 3000;
@@ -24,7 +27,7 @@ var user = mongoose.Schema({
 user.plugin(AutoIncrement, {inc_field: 'id'});
 var User = mongoose.model('User', user);
 
-app.post('/controle_acesso', function (req, res) {
+app.post('/controle_acesso', function (req, res, next) {
   console.log(req.body);
 
   var d = new Date();
@@ -44,7 +47,7 @@ app.post('/controle_acesso', function (req, res) {
   });
 });
 
-app.get('/controle_acesso', function (req, res) {
+app.get('/controle_acesso', function (req, res, next) {
   User.find(function (err, users) {
     if (err) return console.error(err);
     res.send(users);
