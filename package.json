@@ -5,9 +5,10 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
     "express": "^4.15.4",
-    "mongoose-auto-increment": "^5.0.1",
     "mongoose": "^4.11.7",
+    "mongoose-auto-increment": "^5.0.1",
     "mongoose-sequence": "^4.0.0"
   },
   "devDependencies": {},
