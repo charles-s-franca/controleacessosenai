@@ -27,10 +27,15 @@ var User = mongoose.model('User', user);
 app.post('/controle_acesso', function (req, res) {
   console.log(req.body);
 
+  var d = new Date();
+  if(req.body.data_acesso){
+    new Date(req.body.data_acesso);
+  }
+
   var newuser = new User({
     id: 1,
     usuario: req.body.usuario,
-    "data_acesso": new Date(req.body.data_acesso)
+    "data_acesso": d
   });
 
   newuser.save(function (err, user) {
