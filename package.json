@@ -1,0 +1,28 @@
+{
+  "name": "controle_acesso",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose-auto-increment": "^5.0.1",
+    "mongoose": "^4.11.7",
+    "mongoose-sequence": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charles-s-franca/controleacessosenai.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charles-s-franca/controleacessosenai/issues"
+  },
+  "homepage": "https://github.com/charles-s-franca/controleacessosenai#readme"
+}
